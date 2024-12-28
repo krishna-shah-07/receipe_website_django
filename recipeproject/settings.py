@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-0a0fwdh@z*atbomm-^m9(m^cpi_r65b_6hlm62^nut2k5ob5z5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['recipeproject.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -74,11 +74,20 @@ WSGI_APPLICATION = 'recipeproject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
+import environ
+
+env = environ.Env()
+environ.Env.read_env()
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': env.db('DATABASE_URL', default='sqlite:///db.sqlite3')
 }
 
 
@@ -123,6 +132,8 @@ STATICFILES_DIR = {
 }
 MEDIA_ROOT = os.path.join(BASE_DIR, 'public/static')
 MEDIA_URL = 'media/'
+
+MIDDLEWARE += ['whitenoise.middleware.WhiteNoiseMiddleware']
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
