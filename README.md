@@ -2,8 +2,12 @@ IMPLEMENTED BASIC CRUD OPERATIONS IN DJANGO : RECEIPE WEBSITE
 This branch also has the login and other authenticatins
 
 To clone the repository:
-git clone https://github.com/krishna-shah-07/receipe_website_django.git
-cd receipe_website_django
+`git clone https://github.com/krishna-shah-07/receipe_website_django.git`
+
+Go to that folder:
+`cd receipe_website_django`
+
+Install the requirements:
 `pip install requirements.txt`
 
 ![image](https://github.com/user-attachments/assets/8e77faba-209e-43a0-9ad2-ef4e6dd3e157)
