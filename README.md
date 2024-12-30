@@ -1,4 +1,5 @@
 IMPLEMENTED BASIC CRUD OPERATIONS IN DJANGO : RECEIPE WEBSITE
+
 This branch also has the login and other authenticatins
 
 To clone the repository:
