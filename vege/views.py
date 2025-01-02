@@ -110,3 +110,8 @@ def register_page(request):
         return redirect('/register/')
 
     return render(request, 'register.html')
+
+from vege.utils import send_email_to_client
+def send_email(request):
+    send_email_to_client()
+    return redirect('/')
